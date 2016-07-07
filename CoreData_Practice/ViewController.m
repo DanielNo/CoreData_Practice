@@ -9,7 +9,8 @@
 #import "ViewController.h"
 #import "AppDelegate.h"
 #import "Manager.h"
-#import "SearchTableViewController.h"
+#import "CDSearchTableViewController.h"
+#import "CDFetchedResultsTableViewController.h"
 
 @interface ViewController ()
 
@@ -20,18 +21,6 @@
 
 
 - (IBAction)findAll:(id)sender {
-//    NSArray *people = [Manager MR_findAll];
-//    NSLog(@"found %ul entries : ",[people count]);
-////    NSLog(@"saved data : \n%@",obj2);
-//    
-//    if (people) {
-//        for (Manager *manager in people) {
-//            NSLog(@"%@",manager);
-////            NSString *first = manager.first_name;
-//            
-//        }
-//        
-//    }
 
     
 }
@@ -75,18 +64,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _textFieldsArray = [NSArray arrayWithObjects:_firstTextField,_lastTextField,_phoneTextField,_salaryTextField,_bossTextField,_deptTextField,_addressTextField,_searchTextField,nil];
-    
-    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier  isEqual: @"findall"]) {
-        NSLog(@"find");
+        CDFetchedResultsTableViewController *fetchedTableVC = [segue destinationViewController];
         
     }
     if ([segue.identifier isEqual:@"searchRecord"]) {
-        SearchTableViewController *searchVC = [segue destinationViewController];
+        CDSearchTableViewController *searchVC = [segue destinationViewController];
         searchVC.searchTerm = _searchTextField.text;
         _searchTextField.text = @"";
         NSLog(@"search record");

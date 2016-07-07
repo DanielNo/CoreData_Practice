@@ -107,6 +107,9 @@
     }
     _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+    _bgContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    _bgContext.parentContext = _managedObjectContext;
+
     return _managedObjectContext;
 }
 
@@ -114,15 +117,42 @@
 
 - (void)saveContext {
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
-    if (managedObjectContext != nil) {
-        NSError *error = nil;
-        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
+    
+//    managedObjectContext
+    
+    [_bgContext performBlock:^{
+        // do something that takes some time asynchronously using the temp context
+        NSLog(@"perform block");
+        // push to parent
+        NSError *error;
+        if (![_bgContext save:&error])
+        {
+            NSLog(@"child error");
+            // handle error
         }
-    }
+        
+        // save parent to disk asynchronously
+        [managedObjectContext performBlock:^{
+            NSError *error;
+            if (![managedObjectContext save:&error])
+            {
+                NSLog(@"parent error");
+                // handle error
+            }
+        }];
+    }];
+
+
+    
+//    if (managedObjectContext != nil) {
+//        NSError *error = nil;
+//        if ([bgContext hasChanges] && ![managedObjectContext save:&error]) {
+//            // Replace this implementation with code to handle the error appropriately.
+//            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+//            abort();
+//        }
+//    }
 }
 
 @end

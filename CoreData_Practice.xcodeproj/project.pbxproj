@@ -18,10 +18,11 @@
 		30FC31E11D2DA6AC00DCBDFA /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FC31DB1D2DA6AC00DCBDFA /* Person.m */; };
 		30FC31E21D2DA6AC00DCBDFA /* Manager+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FC31DD1D2DA6AC00DCBDFA /* Manager+CoreDataProperties.m */; };
 		30FC31E31D2DA6AC00DCBDFA /* Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FC31DF1D2DA6AC00DCBDFA /* Manager.m */; };
-		30FC31E61D2DA74C00DCBDFA /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FC31E51D2DA74C00DCBDFA /* TableViewController.m */; };
 		30FC31EA1D2DA86D00DCBDFA /* PersonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FC31E81D2DA86D00DCBDFA /* PersonCell.m */; };
 		30FC31EB1D2DA86D00DCBDFA /* PersonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30FC31E91D2DA86D00DCBDFA /* PersonCell.xib */; };
-		30FC31F11D2DB0B000DCBDFA /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FC31F01D2DB0B000DCBDFA /* SearchTableViewController.m */; };
+		30FC31F51D2EB3FD00DCBDFA /* EditEntityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FC31F41D2EB3FD00DCBDFA /* EditEntityViewController.m */; };
+		30FC31F81D2ED85A00DCBDFA /* CDFetchedResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FC31F71D2ED85A00DCBDFA /* CDFetchedResultsTableViewController.m */; };
+		30FC31FB1D2ED91100DCBDFA /* CDSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FC31FA1D2ED91100DCBDFA /* CDSearchTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,13 +45,15 @@
 		30FC31DD1D2DA6AC00DCBDFA /* Manager+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Manager+CoreDataProperties.m"; sourceTree = "<group>"; };
 		30FC31DE1D2DA6AC00DCBDFA /* Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
 		30FC31DF1D2DA6AC00DCBDFA /* Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Manager.m; sourceTree = "<group>"; };
-		30FC31E41D2DA74C00DCBDFA /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
-		30FC31E51D2DA74C00DCBDFA /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		30FC31E71D2DA86D00DCBDFA /* PersonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonCell.h; sourceTree = "<group>"; };
 		30FC31E81D2DA86D00DCBDFA /* PersonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonCell.m; sourceTree = "<group>"; };
 		30FC31E91D2DA86D00DCBDFA /* PersonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonCell.xib; sourceTree = "<group>"; };
-		30FC31EF1D2DB0B000DCBDFA /* SearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewController.h; sourceTree = "<group>"; };
-		30FC31F01D2DB0B000DCBDFA /* SearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewController.m; sourceTree = "<group>"; };
+		30FC31F31D2EB3FD00DCBDFA /* EditEntityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditEntityViewController.h; sourceTree = "<group>"; };
+		30FC31F41D2EB3FD00DCBDFA /* EditEntityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditEntityViewController.m; sourceTree = "<group>"; };
+		30FC31F61D2ED85A00DCBDFA /* CDFetchedResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDFetchedResultsTableViewController.h; sourceTree = "<group>"; };
+		30FC31F71D2ED85A00DCBDFA /* CDFetchedResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDFetchedResultsTableViewController.m; sourceTree = "<group>"; };
+		30FC31F91D2ED91100DCBDFA /* CDSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDSearchTableViewController.h; sourceTree = "<group>"; };
+		30FC31FA1D2ED91100DCBDFA /* CDSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDSearchTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,17 +124,19 @@
 		30FC31F21D2DB0B800DCBDFA /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
-				30FC31E41D2DA74C00DCBDFA /* TableViewController.h */,
-				30FC31E51D2DA74C00DCBDFA /* TableViewController.m */,
+				30FC31B41D2CCAAD00DCBDFA /* ViewController.h */,
+				30FC31B51D2CCAAD00DCBDFA /* ViewController.m */,
+				30FC31F61D2ED85A00DCBDFA /* CDFetchedResultsTableViewController.h */,
+				30FC31F71D2ED85A00DCBDFA /* CDFetchedResultsTableViewController.m */,
+				30FC31F91D2ED91100DCBDFA /* CDSearchTableViewController.h */,
+				30FC31FA1D2ED91100DCBDFA /* CDSearchTableViewController.m */,
 				30FC31E71D2DA86D00DCBDFA /* PersonCell.h */,
 				30FC31E81D2DA86D00DCBDFA /* PersonCell.m */,
 				30FC31E91D2DA86D00DCBDFA /* PersonCell.xib */,
-				30FC31EF1D2DB0B000DCBDFA /* SearchTableViewController.h */,
-				30FC31F01D2DB0B000DCBDFA /* SearchTableViewController.m */,
 				30FC31BF1D2CCAAD00DCBDFA /* LaunchScreen.storyboard */,
 				30FC31B71D2CCAAD00DCBDFA /* Main.storyboard */,
-				30FC31B41D2CCAAD00DCBDFA /* ViewController.h */,
-				30FC31B51D2CCAAD00DCBDFA /* ViewController.m */,
+				30FC31F31D2EB3FD00DCBDFA /* EditEntityViewController.h */,
+				30FC31F41D2EB3FD00DCBDFA /* EditEntityViewController.m */,
 			);
 			name = "User Interface";
 			sourceTree = "<group>";
@@ -210,14 +215,15 @@
 				30FC31EA1D2DA86D00DCBDFA /* PersonCell.m in Sources */,
 				30FC31E11D2DA6AC00DCBDFA /* Person.m in Sources */,
 				30FC31B61D2CCAAD00DCBDFA /* ViewController.m in Sources */,
+				30FC31F51D2EB3FD00DCBDFA /* EditEntityViewController.m in Sources */,
+				30FC31F81D2ED85A00DCBDFA /* CDFetchedResultsTableViewController.m in Sources */,
 				30FC31B31D2CCAAD00DCBDFA /* AppDelegate.m in Sources */,
+				30FC31FB1D2ED91100DCBDFA /* CDSearchTableViewController.m in Sources */,
 				30FC31B01D2CCAAD00DCBDFA /* main.m in Sources */,
-				30FC31E61D2DA74C00DCBDFA /* TableViewController.m in Sources */,
 				30FC31E21D2DA6AC00DCBDFA /* Manager+CoreDataProperties.m in Sources */,
 				30FC31E01D2DA6AC00DCBDFA /* Person+CoreDataProperties.m in Sources */,
 				30FC31BC1D2CCAAD00DCBDFA /* CoreData_Practice.xcdatamodeld in Sources */,
 				30FC31E31D2DA6AC00DCBDFA /* Manager.m in Sources */,
-				30FC31F11D2DB0B000DCBDFA /* SearchTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
